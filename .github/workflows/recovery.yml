@@ -16,12 +16,12 @@ on:
 env:
   MANIFEST: git://github.com/SHRP/platform_manifest_twrp_omni.git -b v3_9.0
   DEVICE: ido
-  DT_LINK: https://github.com/xoo2001/android_recovery_ido -b shrp
+  DT_LINK: https://github.com/xoo2001/android_recovery_ido.git -b shrp
   DT_PATH: device/xiaomi/ido
   TARGET: recoveryimage
   VENDOR: xiaomi
   MAINTAINER: xvae27
-  TZ: Asia/Kolkata
+  TZ: Asia/Jakarta
   ID: -1509682692
   TOKEN: ${{ secrets.BOTTOKEN }}
   
@@ -53,7 +53,6 @@ jobs:
              repo init -u $MANIFEST --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
              repo sync -c -q --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
-             git clone $DT_LINK2 --depth=1 --single-branch $DT_PATH2
              git clone https://github.com/omnirom/android_vendor_qcom_opensource_commonsys --depth=1 -b android-9.0 vendor/qcom/opensource/commonsys
              
        - name: Build
