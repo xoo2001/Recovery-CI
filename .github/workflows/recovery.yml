@@ -22,7 +22,7 @@ env:
   VENDOR: xiaomi
   MAINTAINER: xvae27
   TZ: Asia/Jakarta
-  ID: -1509682692
+  ID: -1967265703
   TOKEN: ${{ secrets.BOTTOKEN }}
   
   
@@ -60,7 +60,7 @@ jobs:
               cd work
               . build/envsetup.sh &&lunch omni_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
              
-       - name: Upload recovery image to SHRP Maintainers Group
+       - name: Upload recovery image to Channel
          run: |
               cd work/out/target/product/$DEVICE 
               ZIP=$(echo *stable*.zip)
