@@ -20,7 +20,6 @@ env:
   DT_PATH: device/infinix/hot10
   TARGET: recoveryimage
   VENDOR: infinix
-  MAINTAINER: xvae27
   TZ: Asia/Jakarta
   ID: -1967265703
   TOKEN: ${{ secrets.BOTTOKEN }}
